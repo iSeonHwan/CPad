@@ -28,10 +28,13 @@ class Notepad(tk.Tk):
         # 텍스트 변경 이벤트 바인딩
         self.text_area.bind("<KeyRelease>", self.update_status_bar)
 
-        self.menu_bar = tk.Menu(self)
+        # 메뉴바의 폰트를 지정함.
+        self.menu_bar = tk.Menu(self, font=("Arial", 12))
         self.config(menu=self.menu_bar)
 
-        self.file_menu = tk.Menu(self.menu_bar, tearoff=0)
+        #파일 메뉴바의 폰드를 지정함.
+        self.file_menu = tk.Menu(self.menu_bar, tearoff=0, font=("Arial", 12))
+        
         self.menu_bar.add_cascade(label="file", menu=self.file_menu)
         self.file_menu.add_command(label="open", command=self.open_file)
         self.file_menu.add_command(label="save", command=self.save_file)
